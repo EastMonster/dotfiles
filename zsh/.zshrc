@@ -97,5 +97,29 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias c='clear'
+alias h='history'
+
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/eastmonster/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/eastmonster/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/eastmonster/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/eastmonster/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# proxy setting
+host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+export http_proxy="http://$host_ip:16514"
+export https_proxy="http://$host_ip:16514"
+
