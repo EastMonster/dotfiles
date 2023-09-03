@@ -19,15 +19,16 @@ return {
         event = "VeryLazy",
         init = function()
             vim.o.timeout = true
-            vim.o.timeoutlen = 300
+            vim.o.timeoutlen = 1000
         end,
         opts = {},
     },
+    -- 相同关键字高亮
     {
         "RRethy/vim-illuminate",
         event = { "BufReadPost", "BufNewFile" },
         opts = {
-            delay = 200,
+            delay = 1000,
             large_file_cutoff = 2000,
             large_file_overrides = {
                 providers = { "lsp" },
@@ -39,5 +40,9 @@ return {
             vim.cmd([[hi IlluminatedWordRead guibg=#4A505F]])
             vim.cmd([[hi IlluminatedWordText guibg=#4A505F]])
         end,
+    },
+    -- 和 tmux 的跳转联动
+    {
+        "christoomey/vim-tmux-navigator"
     }
 }
