@@ -10,6 +10,7 @@ return {
                     "c",
                     "html",
                     "lua",
+                    "python",
                     "query",
                     "regex",
                     "rust",

@@ -12,6 +12,7 @@ return {
                     ensure_installed = {
                         "clangd",
                         "lua_ls",
+                        "pyright",
                         "rust_analyzer",
                     },
                 },
@@ -22,30 +23,10 @@ return {
             require("mason-lspconfig").setup()
 
             local lspconfig = require("lspconfig")
-            -- ref: https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/manual.adoc#vimneovim
-            lspconfig.rust_analyzer.setup {
-                on_attach = on_attach,
-                settings = {
-                    ["rust_analyzer"] = {
-                        imports = {
-                            granularity = {
-                                group = "module",
-                            },
-                            prefix = "self",
-                        },
-                        cargo = {
-                            buildScripts = {
-                                enable = true,
-                            },
-                        },
-                        procMacro = {
-                            enable = true
-                        },
-                    }
-                }
-            }
+            lspconfig.rust_analyzer.setup {}
             lspconfig.clangd.setup {}
             lspconfig.lua_ls.setup {}
+            lspconfig.pyright.setup {}
         end,
         config = function()
             -- 跟着官方文档来的...
