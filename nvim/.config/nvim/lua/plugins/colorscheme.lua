@@ -1,7 +1,7 @@
 return {
     -- One Dark Pro
     {
-        "olimorris/onedarkpro.nvim",
+        "navarasu/onedark.nvim",
         lazy = false,
         priority = 1000, -- Ensure it loads first
         config = function()
