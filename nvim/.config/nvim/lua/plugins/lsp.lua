@@ -14,6 +14,7 @@ return {
                         "lua_ls",
                         "pyright",
                         "rust_analyzer",
+                        "tsserver",
                     },
                 },
             }
@@ -23,10 +24,11 @@ return {
             require("mason-lspconfig").setup()
 
             local lspconfig = require("lspconfig")
-            lspconfig.rust_analyzer.setup {}
             lspconfig.clangd.setup {}
             lspconfig.lua_ls.setup {}
             lspconfig.pyright.setup {}
+            lspconfig.rust_analyzer.setup {}
+            lspconfig.tsserver.setup {}
         end,
         config = function()
             -- 跟着官方文档来的...

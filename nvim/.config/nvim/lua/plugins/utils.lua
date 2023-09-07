@@ -6,12 +6,9 @@ return {
     },
     -- 括号补全
     {
-        "echasnovski/mini.pairs",
-        version = false,
-        event = "VeryLazy",
-        config = function()
-            require("mini.pairs").setup()
-        end,
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {}
     },
     -- 快捷键提示 (?)
     {
@@ -44,5 +41,11 @@ return {
     -- 和 tmux 的跳转联动
     {
         "christoomey/vim-tmux-navigator"
+    },
+    -- 特殊注释高亮 (TODO...)
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {}
     }
 }
