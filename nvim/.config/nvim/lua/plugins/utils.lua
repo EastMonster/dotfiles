@@ -33,9 +33,9 @@ return {
         },
         config = function(_, opts)
             require("illuminate").configure(opts)
-            vim.cmd([[hi IlluminatedWordWrite guibg=#4A505F]])
-            vim.cmd([[hi IlluminatedWordRead guibg=#4A505F]])
-            vim.cmd([[hi IlluminatedWordText guibg=#4A505F]])
+            vim.cmd([[hi IlluminatedWordWrite gui=NONE guibg=#4A505F]])
+            vim.cmd([[hi IlluminatedWordRead gui=NONE guibg=#4A505F]])
+            vim.cmd([[hi IlluminatedWordText gui=NONE guibg=#4A505F]])
         end,
     },
     -- 和 tmux 的跳转联动
